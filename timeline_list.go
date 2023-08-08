@@ -7,10 +7,10 @@ type listEntry struct {
 		CursorType  string `json:"cursorType"`
 		EntryType   string `json:"entryType"`
 		Value       string `json:"value"`
-		__typename  string `json:"__typename"`
+		Typename    string `json:"__typename"`
 		ItemContent struct {
 			ItemType         string `json:"itemType"`
-			__typename       string `json:"__typename"`
+			Typename         string `json:"__typename"`
 			TweetDisplayType string `json:"tweetDisplayType"`
 			TweetResults     struct {
 				Result result `json:"result"`
