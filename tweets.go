@@ -9,11 +9,11 @@ import (
 
 // GetTweets returns channel with tweets for a given user.
 func (s *Scraper) GetTweets(ctx context.Context, user string, maxTweetsNbr int) <-chan *TweetResult {
-	return getTweetTimeline(ctx, user, maxTweetsNbr, s.FetchTweets)
+	return getTweetTimeline(ctx, user, maxTweetsNbr, "", s.FetchTweets)
 }
 
-func (s *Scraper) GetTweetsFromList(ctx context.Context, listId string, maxTweetsNbr int) <-chan *TweetResult {
-	return getTweetTimeline(ctx, listId, maxTweetsNbr, s.FetchTweetsByListID)
+func (s *Scraper) GetTweetsFromList(ctx context.Context, listId string, maxTweetsNbr int, cursor string) <-chan *TweetResult {
+	return getTweetTimeline(ctx, listId, maxTweetsNbr, cursor, s.FetchTweetsByListID)
 }
 
 // FetchTweets gets tweets for a given user, via the Twitter frontend API.
