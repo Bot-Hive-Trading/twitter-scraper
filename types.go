@@ -77,7 +77,8 @@ type (
 	// TweetResult of scrapping.
 	TweetResult struct {
 		Tweet
-		Error error
+		NextCursor string
+		Error      error
 	}
 
 	legacyTweet struct {

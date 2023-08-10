@@ -79,7 +79,7 @@ func (timeline *searchTimeline) parseUsers() ([]*Profile, string) {
 
 // SearchTweets returns channel with tweets for a given search query
 func (s *Scraper) SearchTweets(ctx context.Context, query string, maxTweetsNbr int) <-chan *TweetResult {
-	return getTweetTimeline(ctx, query, maxTweetsNbr, s.FetchSearchTweets)
+	return getTweetTimeline(ctx, query, maxTweetsNbr, "", s.FetchSearchTweets)
 }
 
 // SearchProfiles returns channel with profiles for a given search query

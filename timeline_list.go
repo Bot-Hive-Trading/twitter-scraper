@@ -40,7 +40,7 @@ func (timeline *timelineForList) parseTweets() ([]*Tweet, string) {
 	var tweets []*Tweet
 	for _, instruction := range timeline.Data.List.TweetsTimeline.Timeline.Instructions {
 		for _, entry := range instruction.Entries {
-			if entry.Content.CursorType == "Bottom" {
+			if entry.Content.CursorType == "Top" {
 				cursor = entry.Content.Value
 				continue
 			}
